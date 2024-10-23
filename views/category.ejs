@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= restaurantName %> - <%= categoryCapital %></title>
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <h1><%= categoryCapital %></h1>
+    <% menuItems.forEach((dish, index)=> {%>
+    <div style="border: 1px dashed black">
+      <h4 display="inline"><%= dish.name %></h4>
+      <span>(<%= dish.rating %> star(s))</span> -
+      <span>Price: <%= dish.price %></span><br />
+      <%= dish.details %>
+    </div>
+    <% }) %>
+  </body>
+</html>
